@@ -2,10 +2,10 @@
 
 # 👨‍💻 Carlos Indriago — Portfolio
 
-**Senior Backend Architect & Full-Stack Developer**  
+**Senior Software Architect & Full-Stack Developer**  
 Lima, Perú · Disponible para proyectos remotos
 
-[![Live](https://img.shields.io/badge/🌐_Live-carlosindriago.dev-00d4aa?style=for-the-badge)](https://carlosindriago.dev)
+[![Live](https://img.shields.io/badge/🌐_Live-carlosindriago.com-00d4aa?style=for-the-badge)](https://carlosindriago.com)
 [![Astro](https://img.shields.io/badge/Astro-4.15-FF5D01?style=for-the-badge&logo=astro)](https://astro.build)
 [![Lighthouse](https://img.shields.io/badge/Lighthouse-100%2F100-00d4aa?style=for-the-badge)](https://pagespeed.web.dev/)
 
@@ -25,8 +25,8 @@ Arquitecto de software con **+15 años de experiencia** construyendo plataformas
 
 | Capa | Tecnología |
 |------|-------------|
-| Framework | Astro 4 (Zero JS por defecto) |
-| Estilos | CSS puro con design tokens |
+| Framework | Astro 6 (Zero JS por defecto) |
+| Estilos | Tailwind CSS 4 + design tokens |
 | SEO | JSON-LD Person + WebSite schema |
 | Sitemap | @astrojs/sitemap (auto-generado) |
 | Deploy | Coolify + Docker + Caddy |
@@ -52,7 +52,7 @@ npm run preview    # preview de dist/
 1. En Coolify → **New Resource → Docker Compose**
 2. Repository: `carlosindriago/carlosindriago.dev`
 3. Branch: `main`
-4. Domain: `carlosindriago.dev`
+4. Domain: `carlosindriago.com`
 5. Port: `3000`
 6. **Auto-deploy on push**: ✅ enabled
 7. Deploy → en ~2 min el sitio está live
@@ -88,7 +88,7 @@ src/
 ├── data/
 │   └── site.ts          ← ⭐ Single Source of Truth
 ├── layouts/
-│   └── BaseLayout.astro
+│   └── Layout.astro
 ├── pages/
 │   ├── index.astro
 │   └── robots.txt.ts
@@ -102,4 +102,4 @@ src/
 
 ## 📄 Licencia
 
-MIT © 2026 [Carlos Indriago](https://carlosindriago.dev)
+MIT © 2026 [Carlos Indriago](https://carlosindriago.com)

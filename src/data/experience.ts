@@ -8,7 +8,7 @@ export interface Experience {
 
 export const experience: Experience[] = [
   {
-    role: 'Senior Backend Architect & Full-Stack Developer',
+    role: 'Senior Software Architect & Full-Stack Developer',
     company: 'Freelance / Remoto · Lima, Peru',
     period: '2020 — Presente',
     description: 'Arquitectura y desarrollo de plataformas SaaS multi-tenant, APIs de alto rendimiento y sistemas de seguridad para clientes en Latinoamérica y Europa. Construcción de plugins WordPress propios (WooSpeed, SpectrusGuard) y automatizaciones con n8n para clientes enterprise.',
