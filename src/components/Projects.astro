@@ -1,0 +1,39 @@
+---
+import { projects } from '../data/projects';
+---
+<section id="projects" class="py-24 bg-background relative overflow-hidden">
+  <div class="bg-glow top-[40%] left-[-20%] opacity-20"></div>
+  <div class="max-w-6xl mx-auto px-6 relative z-10">
+    <p class="text-accent-light font-mono text-sm font-semibold mb-3 tracking-widest uppercase">// proyectos</p>
+    <h2 class="font-display font-800 text-white mb-16" style="font-size: var(--text-2xl);">
+      Lo que he construido
+    </h2>
+
+    <div class="grid md:grid-cols-2 gap-8">
+      {projects.map((p, i) => (
+        <article class={`group relative bg-surface/60 backdrop-blur-md rounded-2xl p-8 border border-white/10 hover:border-accent-light/50 transition-all hover:shadow-[0_10px_40px_rgba(139,13,244,0.15)] hover:-translate-y-2 ${ p.featured ? '' : 'opacity-90' }`}>
+          <!-- Index -->
+          <span class="font-display font-800 text-4xl text-white/5 absolute top-6 right-8 pointer-events-none">{String(i + 1).padStart(2, '0')}</span>
+
+          <h3 class="font-display font-800 text-white mb-4 pr-12" style="font-size: var(--text-lg);">{p.title}</h3>
+          <p class="text-gray-300 mb-8 leading-relaxed text-[15px] min-h-[4.5rem]">{p.description}</p>
+
+          <!-- Tags -->
+          <div class="flex flex-wrap gap-2 mb-8">
+            {p.tags.map(tag => (
+              <span class="px-3 py-1 rounded-full text-xs font-semibold bg-white/5 border border-white/10 text-gray-300">{tag}</span>
+            ))}
+          </div>
+
+          <!-- Links -->
+          {(p.url || p.repo) && (
+            <div class="flex gap-4 pt-6 border-t border-white/10">
+              {p.url && <a href={p.url} target="_blank" rel="noopener noreferrer" class="text-sm font-semibold text-accent-light hover:text-white transition-colors flex items-center gap-1">Ver demo <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>}
+              {p.repo && <a href={p.repo} target="_blank" rel="noopener noreferrer" class="text-sm font-semibold text-gray-400 hover:text-white transition-colors flex items-center gap-1">Código <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>}
+            </div>
+          )}
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

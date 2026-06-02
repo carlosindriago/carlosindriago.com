@@ -1,0 +1,42 @@
+---
+import { experience } from '../data/experience';
+---
+<section id="experience" class="py-24 bg-surface relative overflow-hidden">
+  <div class="max-w-4xl mx-auto px-6 relative z-10">
+    <p class="text-accent-light font-mono text-sm font-semibold mb-3 tracking-widest uppercase">// experiencia</p>
+    <h2 class="font-display font-800 text-white mb-16" style="font-size: var(--text-2xl);">
+      Trayectoria
+    </h2>
+
+    <div class="space-y-0">
+      {experience.map((exp, i) => (
+        <div class="relative pl-10 pb-16 last:pb-0 group">
+          <!-- Timeline line -->
+          {i < experience.length - 1 && (
+            <div class="absolute left-[13px] top-8 bottom-0 w-px bg-white/10 group-hover:bg-brand-500/30 transition-colors"></div>
+          )}
+          <!-- Dot -->
+          <div class="absolute left-0 top-2 w-7 h-7 rounded-full bg-surface border-4 border-white/10 flex items-center justify-center group-hover:border-accent-light transition-colors z-10">
+            <div class="w-2 h-2 rounded-full bg-white group-hover:bg-accent-light transition-colors"></div>
+          </div>
+
+          <div class="bg-background/80 backdrop-blur-sm rounded-2xl p-8 border border-white/5 hover:border-brand-500/30 transition-all hover:shadow-[0_0_30px_rgba(139,13,244,0.1)] group-hover:-translate-y-1">
+            <div class="flex flex-wrap gap-4 items-start justify-between mb-4">
+              <div>
+                <h3 class="font-display font-800 text-white mb-1" style="font-size: var(--text-lg);">{exp.role}</h3>
+                <p class="text-sm font-semibold text-accent-light uppercase tracking-wide">{exp.company}</p>
+              </div>
+              <span class="font-mono text-xs text-gray-400 bg-white/5 border border-white/10 px-4 py-1.5 rounded-full shadow-inner">{exp.period}</span>
+            </div>
+            <p class="text-gray-300 mb-6 leading-relaxed text-[15px]">{exp.description}</p>
+            <div class="flex flex-wrap gap-2">
+              {exp.tags.map(tag => (
+                <span class="px-3 py-1 rounded-full text-xs font-semibold bg-brand-900/40 border border-brand-500/20 text-brand-200">{tag}</span>
+              ))}
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
