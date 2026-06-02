@@ -10,33 +10,38 @@ export default {
         mono: ['JetBrains Mono', 'monospace']
       },
       colors: {
-        background: '#0B0515', // Ultra dark purple/black
-        surface: '#120921',
+        background: '#0f1115', // Warm dark slate/zinc
+        surface: '#181b20',    // Slightly lighter surface card color
         brand: {
-          50:  '#f5ebff',
-          100: '#ebd3ff',
-          200: '#d7a6ff',
-          300: '#be6fff',
-          400: '#a333ff',
-          500: '#8b0df4',
-          600: '#7500d0', // Primary accent
-          700: '#6100aa',
-          800: '#52008e',
-          900: '#460275'
+          50:  '#eff6ff',
+          100: '#dbeafe',
+          200: '#bfdbfe',
+          300: '#93c5fd',
+          400: '#60a5fa',
+          500: '#3b82f6',
+          600: '#2563eb', // Blue 600 (Accent principal Cobalt)
+          700: '#1d4ed8',
+          800: '#1e40af',
+          900: '#1e3a8a'
         },
         accent: {
-          light: '#d280ff',
-          default: '#9D4EDD', // Secondary accent (Pinkish purple)
-          dark: '#5A189A'
+          light: '#93c5fd',
+          default: '#2563eb', // Blue 600
+          dark: '#1e40af'
         }
       },
       animation: {
         'fade-up': 'fadeUp 0.6s cubic-bezier(0.16,1,0.3,1) both',
-        'fade-in': 'fadeIn 0.5s ease both'
+        'fade-in': 'fadeIn 0.5s ease both',
+        'bounce-slow': 'bounceSlow 2s infinite'
       },
       keyframes: {
         fadeUp:  { '0%': { opacity: '0', transform: 'translateY(24px)' }, '100%': { opacity: '1', transform: 'translateY(0)' } },
-        fadeIn:  { '0%': { opacity: '0' }, '100%': { opacity: '1' } }
+        fadeIn:  { '0%': { opacity: '0' }, '100%': { opacity: '1' } },
+        bounceSlow: {
+          '0%, 100%': { transform: 'translateY(0)', animationTimingFunction: 'cubic-bezier(0.8,0,1,1)' },
+          '50%': { transform: 'translateY(6px)', animationTimingFunction: 'cubic-bezier(0,0,0.2,1)' }
+        }
       }
     }
   },

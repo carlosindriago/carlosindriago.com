@@ -1,18 +1,18 @@
 ---
 ---
-<section id="hero" class="min-h-[85vh] flex items-center pt-20 pb-10 relative overflow-hidden">
+<section id="hero" class="min-h-[100svh] flex items-center pt-32 pb-24 relative overflow-hidden">
   <div class="max-w-6xl mx-auto px-6 w-full">
     <div class="grid lg:grid-cols-2 gap-12 items-center">
       <!-- Text Area -->
       <div class="relative z-10 mt-8 lg:mt-0">
-        <p class="text-accent-light font-mono text-xs md:text-sm font-medium mb-4 md:mb-6 tracking-widest uppercase flex items-center gap-2 animate-fade-up">
-          <span class="w-4 h-px bg-accent-light"></span>
-          Ingeniería & Arquitectura
+        <p class="text-accent-default font-mono text-xs md:text-sm font-semibold mb-4 md:mb-6 tracking-widest uppercase flex items-center gap-2 animate-fade-up">
+          <span class="w-4 h-px bg-accent-default"></span>
+          Backend Architect & Full Stack Developer
         </p>
         
-        <h1 class="font-display font-800 text-white mb-4 animate-fade-up animate-delay-100" style="font-size: var(--text-hero); line-height: 1.1;">
-          Carlos Indriago<br/>
-          <span class="text-gradient">Senior Architect</span>
+        <h1 class="font-display font-800 text-white mb-4 animate-fade-up animate-delay-100 text-4xl sm:text-5xl lg:text-5xl xl:text-6xl leading-[1.1]">
+          <span class="block md:whitespace-nowrap">Carlos Indriago</span>
+          <span class="text-gradient block md:whitespace-nowrap">Senior Architect</span>
         </h1>
         
         <p class="text-gray-300 text-base md:text-lg mb-8 animate-fade-up animate-delay-200 leading-relaxed" style="max-width: 48ch;">
@@ -20,10 +20,10 @@
         </p>
         
         <div class="flex flex-wrap gap-4 mb-8 animate-fade-up animate-delay-300">
-          <a href="#projects" class="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl bg-gradient-to-r from-brand-600 to-accent-default text-white font-semibold hover:opacity-90 transition-opacity shadow-[0_0_20px_rgba(139,13,244,0.3)]">
+          <a href="#projects" class="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl bg-brand-600 hover:bg-brand-500 text-white font-semibold transition-colors shadow-[0_0_25px_rgba(37,99,235,0.3)]">
             Ver Proyectos
           </a>
-          <a href="#contact" class="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl border border-white/20 text-white font-semibold hover:border-white/50 transition-colors">
+          <a href="#contact" class="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl border border-white/10 text-gray-300 font-semibold hover:border-brand-500/30 hover:text-white hover:bg-white/5 transition-all">
             Contactar
           </a>
         </div>
@@ -42,10 +42,26 @@
       <!-- Visual Area -->
       <div class="flex justify-center lg:justify-end relative z-10 animate-fade-in animate-delay-300 mt-8 lg:mt-0">
         <div class="relative w-[340px] h-[340px] sm:w-[400px] sm:h-[400px] flex items-center justify-center group">
+          <!-- Background Glow/Radial Gradient behind the photo -->
+          <div class="absolute inset-0 bg-gradient-to-tr from-brand-600/20 to-accent-light/10 rounded-full blur-3xl opacity-60 group-hover:opacity-85 transition-opacity duration-700 pointer-events-none -z-10"></div>
+          
+          <!-- Subtle decorative border or ring -->
+          <div class="absolute inset-4 rounded-full border border-brand-500/10 group-hover:border-brand-500/30 transition-colors duration-700 pointer-events-none -z-10"></div>
+
           <!-- Professional Photo masked to fade on the bottom -->
           <img src="/profile.png" alt="Carlos Indriago - Senior Backend Architect" class="w-full h-full object-cover object-top drop-shadow-2xl opacity-70 group-hover:opacity-95 transition-all duration-700 group-hover:scale-105 [mask-image:linear-gradient(to_bottom,black_60%,transparent_100%)] [-webkit-mask-image:linear-gradient(to_bottom,black_60%,transparent_100%)]" />
         </div>
       </div>
     </div>
+  </div>
+
+  <!-- Scroll Indicator -->
+  <div class="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 animate-fade-in animate-delay-500 hidden md:block">
+    <a href="#about" aria-label="Ir a sobre mí" class="flex flex-col items-center gap-1.5 text-gray-500 hover:text-brand-500 transition-colors duration-300">
+      <span class="text-[10px] uppercase tracking-widest font-mono font-semibold opacity-50">Scroll</span>
+      <svg class="w-5 h-5 animate-bounce-slow" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+      </svg>
+    </a>
   </div>
 </section>

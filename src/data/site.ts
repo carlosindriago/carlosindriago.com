@@ -8,4 +8,5 @@ export const SITE = {
   githubUrl: 'https://github.com/carlosindriago',
   linkedinUrl: 'https://linkedin.com/in/carlosindriago',
   twitterHandle: '@carlosindriago',
+  email: 'hola@carlosindriago.com',
 };
