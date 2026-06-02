@@ -49,9 +49,17 @@ export const projects: Project[] = [
     url: ''
   },
   {
-    title: 'TuxKeysToys & Wacom Linux Suite',
-    description: 'Suite de herramientas de bajo nivel para entornos X11 en distribuciones Linux. Implementé detección de hardware mediante udev rules y remapeo de interrupciones a nivel de kernel utilizando keyd y Python, resolviendo carencias de accesibilidad en hardware dañado.',
-    tags: ['Python', 'Linux System Administration', 'Shell Scripting'],
+    title: 'Wacom Linux Suite',
+    description: 'Construí una suite de configuración automatizada para tabletas digitalizadoras en entornos X11. Combina reglas `udev` para la detección dinámica de hardware persistente con un dashboard moderno en Electron, eliminando la configuración manual de dotfiles en setups multi-monitor.',
+    tags: ['TypeScript', 'Electron', 'Shell Scripting', 'X11 Architecture'],
+    featured: false,
+    repo: 'https://github.com/carlosindriago/wacom-linux',
+    url: ''
+  },
+  {
+    title: 'TuxKeysToys',
+    description: 'Desarrollé una utilidad gráfica para Linux que intercepta interrupciones de hardware a nivel de kernel utilizando el demonio `keyd`. Permite el remapeo de teclas exclusivo para el teclado integrado (mediante hardware IDs) sin alterar el comportamiento de periféricos externos.',
+    tags: ['Python', 'Linux Kernel', 'Hardware Integration', 'GUI'],
     featured: false,
     repo: 'https://github.com/carlosindriago/tuxkeystoys',
     url: ''
