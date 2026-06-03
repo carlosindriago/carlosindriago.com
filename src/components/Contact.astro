@@ -4,7 +4,7 @@ import { SITE } from '../data/site';
 <section id="contact" class="py-20 md:py-32 bg-background relative overflow-hidden">
   <div class="bg-glow bottom-[20%] right-[-20%] opacity-20"></div>
   <div class="max-w-4xl mx-auto px-6 relative z-10">
-    <div class="bg-surface/80 backdrop-blur-xl rounded-2xl p-12 border border-white/10 text-left shadow-2xl">
+    <div class="bg-surface/80 backdrop-blur-xl rounded-2xl p-8 md:p-12 border border-white/10 text-left shadow-2xl">
       <p class="text-accent-default font-mono text-sm font-semibold mb-4 tracking-widest uppercase">// contacto</p>
       <h2 class="font-display font-800 text-white mb-6" style="font-size: var(--text-2xl);">
         ¿Buscas un arquitecto de software para tu equipo?
@@ -58,7 +58,6 @@ import { SITE } from '../data/site';
           if (status) status.textContent = '';
         }, 2000);
       } catch (err) {
-        console.error('Error al copiar al portapapeles:', err);
         if (status) status.textContent = 'No se pudo copiar el correo. Intenta de nuevo.';
       }
     });
