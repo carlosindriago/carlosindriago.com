@@ -1,6 +1,8 @@
 export interface Project {
   title: string;
-  description: string;
+  problem: string;
+  decision: string;
+  impact: string;
   tags: string[];
   url?: string;
   repo?: string;
@@ -10,7 +12,9 @@ export interface Project {
 export const projects: Project[] = [
   {
     title: 'AequiVault: Motor Contable Financiero B2B',
-    description: 'Desarrollé un motor de contabilidad de partida doble API-first aplicando Clean Architecture y patrones CQRS. Para la consolidación en tiempo real del Plan de Cuentas Jerárquico, utilicé árboles LTREE nativos. Resolví el problema de seguridad aislando físicamente a los tenants mediante inyección de variables de sesión JWT en el pool JDBC, forzando la seguridad a nivel de filas (RLS) en PostgreSQL para auditoría SOX compliance.',
+    problem: 'La plataforma necesitaba manejar contabilidad B2B con trazabilidad, aislamiento por tenant y consistencia en operaciones financieras sensibles.',
+    decision: 'Diseñé un motor API-first de partida doble con Clean Architecture, CQRS, PostgreSQL LTREE para jerarquías contables y RLS alimentado por contexto JWT.',
+    impact: 'Base auditable y preparada para cumplimiento, con separación estricta de datos y una arquitectura clara para evolucionar reglas financieras complejas.',
     tags: ['Java 21', 'Spring Boot', 'PostgreSQL LTREE', 'Row-Level Security', 'Clean Architecture'],
     featured: true,
     repo: 'https://github.com/carlosindriago/AequiVault',
@@ -18,7 +22,9 @@ export const projects: Project[] = [
   },
   {
     title: 'Kartenant ERP',
-    description: 'Arquitecté una plataforma SaaS bajo el patrón de Service Layer en Laravel. Para garantizar seguridad y cumplimiento normativo, implementé una arquitectura "Database-per-Tenant" en PostgreSQL, logrando un aislamiento estricto entre los datos de múltiples empresas y el orquestador principal (Landlord).',
+    problem: 'El ERP debía servir a múltiples empresas sin mezclar datos, manteniendo operación estable y una base flexible para nuevos módulos.',
+    decision: 'Implementé una arquitectura SaaS database-per-tenant con Laravel, PostgreSQL y una capa de servicios para separar dominio, operación y orquestación landlord.',
+    impact: 'Aislamiento fuerte entre clientes, menor riesgo operativo y una estructura más mantenible para incorporar nuevos flujos de negocio.',
     tags: ['PHP 8.2', 'Laravel 11', 'PostgreSQL', 'Database-per-Tenant', 'Docker'],
     featured: false,
     repo: 'https://github.com/carlosindriago/kartenant-erp',
@@ -26,7 +32,9 @@ export const projects: Project[] = [
   },
   {
     title: 'SpectrusGuard Enterprise',
-    description: 'Diseñé un WAF de latencia ultra-baja (< 2ms) implementado como Drop-in Plugin. Desacoplé el bloqueo en tiempo real de la detección de amenazas, construyendo un motor de analítica de comportamiento (UEBA) impulsado por algoritmos estadísticos (Z-Score). Las métricas se procesan asíncronamente mitigando ataques sin degradar la experiencia de usuario.',
+    problem: 'Sitios WordPress necesitaban protección activa sin degradar la experiencia de usuario ni introducir fricción operativa.',
+    decision: 'Diseñé un WAF drop-in de baja latencia, separando bloqueo en tiempo real de analítica UEBA asíncrona basada en señales estadísticas.',
+    impact: 'Mitigación de amenazas sin penalizar el rendimiento, con una arquitectura preparada para observar comportamiento y reducir falsos positivos.',
     tags: ['PHP', 'Web Application Firewall', 'UEBA', 'Security Architecture'],
     featured: false,
     repo: 'https://github.com/carlosindriago/SpectrusGuard',
@@ -34,7 +42,9 @@ export const projects: Project[] = [
   },
   {
     title: 'WooSpeed Analytics',
-    description: 'Desarrollé un motor de indexación que proyecta los datos transaccionales hacia tablas analíticas planas de forma asíncrona. El resultado: reducción de los tiempos de consulta hasta en un 10x (O(1) vs O(N)), liberando el hilo principal sin alterar el core transaccional del CMS.',
+    problem: 'Reportes WooCommerce dependían de consultas costosas sobre datos transaccionales, afectando tiempos de respuesta y operación diaria.',
+    decision: 'Creé un motor de proyección analítica asíncrona hacia tablas planas optimizadas, separando lectura analítica del flujo transaccional.',
+    impact: 'Consultas hasta 10x más rápidas sin modificar el core del CMS ni comprometer la operación de ventas.',
     tags: ['PHP', 'MySQL', 'Data Projection', 'Database Optimization'],
     featured: false,
     repo: 'https://github.com/carlosindriago/woospeed',
@@ -42,7 +52,9 @@ export const projects: Project[] = [
   },
   {
     title: 'Ulauncher Docker Extension',
-    description: 'Lideré la modernización integral de una herramienta open-source legada. Migré la base de código al Docker SDK 7.x moderno y refactoricé la compatibilidad para múltiples emuladores de terminal en Linux, resolviendo deuda técnica crítica.',
+    problem: 'La extensión acumulaba deuda técnica y dependencias antiguas, lo que limitaba compatibilidad con entornos Linux modernos.',
+    decision: 'Modernicé la base al Docker SDK 7.x y refactoricé la integración con múltiples emuladores de terminal.',
+    impact: 'Herramienta más estable, mantenible y compatible, con menor fricción para usuarios open-source.',
     tags: ['Python', 'Docker SDK', 'Legacy Refactoring'],
     featured: false,
     repo: 'https://github.com/carlosindriago/ulauncher-docker',
@@ -50,7 +62,9 @@ export const projects: Project[] = [
   },
   {
     title: 'Wacom Linux Suite',
-    description: 'Construí una suite de configuración automatizada para tabletas digitalizadoras en entornos X11. Combina reglas `udev` para la detección dinámica de hardware persistente con un dashboard moderno en Electron, eliminando la configuración manual de dotfiles en setups multi-monitor.',
+    problem: 'Configurar tabletas Wacom en Linux/X11 era frágil, manual y propenso a romperse en setups multi-monitor.',
+    decision: 'Combiné reglas udev para detección persistente de hardware con un dashboard Electron para automatizar perfiles y ajustes.',
+    impact: 'Menos configuración manual, experiencia más consistente y reducción de errores en entornos de trabajo complejos.',
     tags: ['TypeScript', 'Electron', 'Shell Scripting', 'X11 Architecture'],
     featured: false,
     repo: 'https://github.com/carlosindriago/wacom-linux',
@@ -58,7 +72,9 @@ export const projects: Project[] = [
   },
   {
     title: 'TuxKeysToys',
-    description: 'Desarrollé una utilidad gráfica para Linux que intercepta interrupciones de hardware a nivel de kernel utilizando el demonio `keyd`. Permite el remapeo de teclas exclusivo para el teclado integrado (mediante hardware IDs) sin alterar el comportamiento de periféricos externos.',
+    problem: 'El remapeo de teclas en Linux podía afectar periféricos externos y generar configuraciones difíciles de aislar.',
+    decision: 'Construí una utilidad gráfica que usa keyd y hardware IDs para aplicar remapeos solo al teclado integrado.',
+    impact: 'Personalización precisa del entorno sin efectos colaterales sobre otros dispositivos.',
     tags: ['Python', 'Linux Kernel', 'Hardware Integration', 'GUI'],
     featured: false,
     repo: 'https://github.com/carlosindriago/tuxkeystoys',

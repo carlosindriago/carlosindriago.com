@@ -6,7 +6,7 @@ import { projects } from '../data/projects';
   <div class="max-w-6xl mx-auto px-6 relative z-10">
     <p class="text-accent-default font-mono text-sm font-semibold mb-3 tracking-widest uppercase">// proyectos</p>
     <h2 class="font-display font-800 text-white mb-16" style="font-size: var(--text-2xl);">
-      Lo que he construido
+      Casos de impacto técnico
     </h2>
 
     <div class="grid md:grid-cols-2 gap-8">
@@ -15,8 +15,20 @@ import { projects } from '../data/projects';
           <!-- Index -->
           <span class="font-display font-800 text-4xl text-white/5 absolute top-6 right-8 pointer-events-none">{String(i + 1).padStart(2, '0')}</span>
 
-          <h3 class="font-display font-800 text-white mb-4 pr-12" style="font-size: var(--text-lg);">{p.title}</h3>
-          <p class="text-gray-300 mb-8 leading-relaxed text-[15px] min-h-[4.5rem]">{p.description}</p>
+          <h3 class="font-display font-800 text-white mb-6 pr-12" style="font-size: var(--text-lg);">{p.title}</h3>
+
+          <div class="grid gap-4 mb-8">
+            {[
+              { label: 'Problema', text: p.problem },
+              { label: 'Decisión técnica', text: p.decision },
+              { label: 'Impacto', text: p.impact },
+            ].map(item => (
+              <div class="rounded-2xl border border-white/5 bg-white/[0.03] p-4">
+                <p class="font-mono text-[11px] font-bold uppercase tracking-widest text-brand-400 mb-2">{item.label}</p>
+                <p class="text-gray-300 leading-relaxed text-[15px]">{item.text}</p>
+              </div>
+            ))}
+          </div>
 
           <!-- Tags -->
           <div class="flex flex-wrap gap-2 mb-8">
