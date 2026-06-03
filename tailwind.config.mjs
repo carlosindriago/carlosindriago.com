@@ -26,7 +26,7 @@ export default {
         },
         accent: {
           light: '#93c5fd',
-          default: '#2563eb', // Blue 600
+          default: '#60a5fa', // Blue 400, accessible on dark backgrounds
           dark: '#1e40af'
         }
       },

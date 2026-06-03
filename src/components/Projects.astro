@@ -13,7 +13,7 @@ import { projects } from '../data/projects';
       {projects.map((p, i) => (
         <article class={`group relative bg-surface/50 backdrop-blur-md rounded-2xl p-8 border border-white/10 hover:border-brand-500/30 transition-all duration-300 hover:shadow-[0_12px_40px_rgba(37,99,235,0.08)] hover:-translate-y-1 ${ p.featured ? 'md:col-span-2' : '' }`}>
           <!-- Index -->
-          <span class="font-display font-800 text-4xl text-white/5 absolute top-6 right-8 pointer-events-none">{String(i + 1).padStart(2, '0')}</span>
+          <span aria-hidden="true" class="font-display font-800 text-4xl text-white/10 absolute top-6 right-8 pointer-events-none">{String(i + 1).padStart(2, '0')}</span>
 
           <h3 class="font-display font-800 text-white mb-6 pr-12" style="font-size: var(--text-lg);">{p.title}</h3>
 
