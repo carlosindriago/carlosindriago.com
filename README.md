@@ -2,7 +2,7 @@
 
 # 👨‍💻 Carlos Indriago — Portfolio
 
-**Senior Software Architect & Full-Stack Developer**  
+**Software Architect & Full-Stack Developer**  
 Lima, Perú · Disponible para proyectos remotos
 
 [![Live](https://img.shields.io/badge/🌐_Live-carlosindriago.com-00d4aa?style=for-the-badge)](https://carlosindriago.com)

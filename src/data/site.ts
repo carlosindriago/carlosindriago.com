@@ -1,6 +1,6 @@
 export const SITE = {
-  title: 'Carlos Indriago | Senior Software Architect',
-  description: 'Senior Software Architect con 15+ años de experiencia diseñando plataformas SaaS, APIs críticas, arquitecturas backend seguras y sistemas cloud escalables para equipos remotos.',
+  title: 'Carlos Indriago | Software Architect',
+  description: 'Software Architect con 15+ años de experiencia diseñando plataformas SaaS, APIs críticas, arquitecturas backend seguras y sistemas cloud escalables para equipos remotos.',
   url: 'https://carlosindriago.com',
   locale: 'es_PE',
   ogImage: 'https://avatars.githubusercontent.com/u/129017294?v=4',
