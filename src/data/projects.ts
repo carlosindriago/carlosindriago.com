@@ -21,6 +21,16 @@ export const projects: Project[] = [
     url: ''
   },
   {
+    title: 'Clinicalyx (HealthTech SaaS)',
+    problem: 'El almacenamiento y búsqueda de datos médicos altamente confidenciales (PHI) en un entorno SaaS multi-tenant requería encriptación robusta en reposo sin perder la capacidad de realizar consultas eficientes.',
+    decision: 'Arquitecté la plataforma en Go con la estructura de la Arquitectura Hexagonal, implementando encriptación AES-256-GCM en reposo, Blind Indexing (HMAC-SHA256) para búsquedas deterministas y PostgreSQL Row-Level Security (RLS).',
+    impact: 'Aislamiento multi-tenant delegado directamente a la base de datos, mitigando de forma segura fugas de datos de salud en la capa de aplicación y cumpliendo con estándares de seguridad HIPAA.',
+    tags: ['Go 1.25', 'Next.js', 'Hexagonal Architecture', 'AES-256 Crypto', 'PostgreSQL RLS'],
+    featured: false,
+    repo: 'https://github.com/carlosindriago/clinicalyx',
+    url: ''
+  },
+  {
     title: 'Kartenant ERP',
     problem: 'El ERP debía servir a múltiples empresas sin mezclar datos, manteniendo operación estable y una base flexible para nuevos módulos.',
     decision: 'Implementé una arquitectura SaaS database-per-tenant con Laravel, PostgreSQL y una capa de servicios para separar dominio, operación y orquestación landlord.',

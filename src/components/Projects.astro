@@ -1,5 +1,23 @@
 ---
 import { projects } from '../data/projects';
+
+// Calculate grid span dynamically to prevent trailing gaps
+const getGridSpanClass = (index: number) => {
+  const p = projects[index];
+  if (p.featured) return 'md:col-span-2';
+  
+  if (index === projects.length - 1) {
+    let prevSpansSum = 0;
+    for (let j = 0; j < index; j++) {
+      prevSpansSum += projects[j].featured ? 2 : 1;
+    }
+    if (prevSpansSum % 2 === 0) {
+      return 'md:col-span-2';
+    }
+  }
+  
+  return '';
+};
 ---
 <section id="projects" class="py-20 md:py-32 bg-background relative overflow-hidden">
   <div class="bg-glow top-[40%] left-[-20%] opacity-20"></div>
@@ -11,7 +29,7 @@ import { projects } from '../data/projects';
 
     <div class="grid md:grid-cols-2 gap-8">
       {projects.map((p, i) => (
-        <article class={`group relative bg-surface/50 backdrop-blur-md rounded-2xl p-8 border border-white/10 hover:border-brand-500/30 transition-all duration-300 hover:shadow-[0_12px_40px_rgba(37,99,235,0.08)] hover:-translate-y-1 ${ p.featured ? 'md:col-span-2' : '' }`}>
+        <article class={`group relative bg-surface/50 backdrop-blur-md rounded-2xl p-8 border border-white/10 hover:border-brand-500/30 transition-all duration-300 hover:shadow-[0_12px_40px_rgba(37,99,235,0.08)] hover:-translate-y-1 ${getGridSpanClass(i)}`}>
           <!-- Index -->
           <span aria-hidden="true" class="font-display font-800 text-4xl text-white/10 absolute top-6 right-8 pointer-events-none">{String(i + 1).padStart(2, '0')}</span>
 
