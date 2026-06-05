@@ -33,11 +33,21 @@ export const projects: Project[] = [
   {
     title: 'Kartenant ERP',
     problem: 'El ERP debía servir a múltiples empresas sin mezclar datos, manteniendo operación estable y una base flexible para nuevos módulos.',
-    decision: 'Implementé una arquitectura SaaS database-per-tenant con Laravel, PostgreSQL y una capa de servicios para separar dominio, operación y orquestación landlord.',
+    decision: 'Implementé una arquitectura SaaS database-per-tenant con Laravel, PostgreSQL y una capa de servicios para separar dominio, operación and orquestación landlord.',
     impact: 'Aislamiento fuerte entre clientes, menor riesgo operativo y una estructura más mantenible para incorporar nuevos flujos de negocio.',
     tags: ['PHP 8.2', 'Laravel 11', 'PostgreSQL', 'Database-per-Tenant', 'Docker'],
     featured: false,
     repo: 'https://github.com/carlosindriago/kartenant-erp',
+    url: ''
+  },
+  {
+    title: 'TramiFlow CE (SaaS CRM & Workflow Engine)',
+    problem: 'Las agencias legales y de consultoría dependen de CRMs genéricos que no soportan flujos de trabajo documentales complejos, exponiendo datos sensibles al procesar archivos de clientes en servidores de terceros.',
+    decision: 'Diseñé un CRM multi-tenant utilizando Next.js (App Router) y Supabase, e implementé un motor de manipulación de PDFs 100% client-side (Canvas API/WASM) y Server Actions para validar límites de consumo.',
+    impact: 'Garantía de privacidad absoluta (Zero-Trust) al no transmitir documentos sensibles al servidor, con aislamiento estricto mediante políticas PostgreSQL RLS y liberado bajo licencia AGPL-3.0.',
+    tags: ['TypeScript', 'Next.js 14', 'PostgreSQL RLS', 'Client-Side Architecture', 'SaaS'],
+    featured: false,
+    repo: 'https://github.com/carlosindriago/tramiflow-ce',
     url: ''
   },
   {
@@ -88,16 +98,6 @@ export const projects: Project[] = [
     tags: ['Python', 'Linux Kernel', 'Hardware Integration', 'GUI'],
     featured: false,
     repo: 'https://github.com/carlosindriago/tuxkeystoys',
-    url: ''
-  },
-  {
-    title: 'TramiFlow CE (SaaS CRM & Workflow Engine)',
-    problem: 'Las agencias legales y de consultoría dependen de CRMs genéricos que no soportan flujos de trabajo documentales complejos, exponiendo datos sensibles al procesar archivos de clientes en servidores de terceros.',
-    decision: 'Diseñé un CRM multi-tenant utilizando Next.js (App Router) y Supabase, e implementé un motor de manipulación de PDFs 100% client-side (Canvas API/WASM) y Server Actions para validar límites de consumo.',
-    impact: 'Garantía de privacidad absoluta (Zero-Trust) al no transmitir documentos sensibles al servidor, con aislamiento estricto mediante políticas PostgreSQL RLS y liberado bajo licencia AGPL-3.0.',
-    tags: ['TypeScript', 'Next.js 14', 'PostgreSQL RLS', 'Client-Side Architecture', 'SaaS'],
-    featured: false,
-    repo: 'https://github.com/carlosindriago/tramiflow-ce',
     url: ''
   }
 ];
