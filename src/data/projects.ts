@@ -89,5 +89,15 @@ export const projects: Project[] = [
     featured: false,
     repo: 'https://github.com/carlosindriago/tuxkeystoys',
     url: ''
+  },
+  {
+    title: 'TramiFlow CE (SaaS CRM & Workflow Engine)',
+    problem: 'Las agencias legales y de consultoría dependen de CRMs genéricos que no soportan flujos de trabajo documentales complejos, exponiendo datos sensibles al procesar archivos de clientes en servidores de terceros.',
+    decision: 'Diseñé un CRM multi-tenant utilizando Next.js (App Router) y Supabase, e implementé un motor de manipulación de PDFs 100% client-side (Canvas API/WASM) y Server Actions para validar límites de consumo.',
+    impact: 'Garantía de privacidad absoluta (Zero-Trust) al no transmitir documentos sensibles al servidor, con aislamiento estricto mediante políticas PostgreSQL RLS y liberado bajo licencia AGPL-3.0.',
+    tags: ['TypeScript', 'Next.js 14', 'PostgreSQL RLS', 'Client-Side Architecture', 'SaaS'],
+    featured: false,
+    repo: 'https://github.com/carlosindriago/tramiflow-ce',
+    url: ''
   }
 ];
