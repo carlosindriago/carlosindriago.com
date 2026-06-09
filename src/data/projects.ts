@@ -88,6 +88,9 @@ export const projects: Project[] = [
     impact: 'Herramienta más estable, mantenible y compatible, con menor fricción para usuarios open-source.',
     tags: ['Python', 'Docker SDK', 'Legacy Refactoring'],
     featured: false,
+    image: '/projects/ulauncher-docker.png',
+    imageWidth: 563,
+    imageHeight: 307,
     repo: 'https://github.com/carlosindriago/ulauncher-docker',
     url: ''
   },
