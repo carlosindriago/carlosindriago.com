@@ -9,6 +9,8 @@ export interface Project {
   repo?: string;
   featured?: boolean;
   image?: string;
+  imageWidth?: number;
+  imageHeight?: number;
 }
 
 export const projects: Project[] = [
@@ -20,6 +22,8 @@ export const projects: Project[] = [
     tags: ['Java 21', 'Spring Boot', 'PostgreSQL LTREE', 'Row-Level Security', 'Clean Architecture'],
     featured: true,
     image: '/projects/aequivault.png',
+    imageWidth: 1024,
+    imageHeight: 787,
     repo: 'https://github.com/carlosindriago/AequiVault',
     url: 'https://aequivault.carlosindriago.com/',
     urlLabel: 'Ver en Producción'
@@ -31,6 +35,9 @@ export const projects: Project[] = [
     impact: 'Aislamiento multi-tenant delegado directamente a la base de datos, mitigando de forma segura fugas de datos de salud en la capa de aplicación y cumpliendo con estándares de seguridad HIPAA.',
     tags: ['Go 1.25', 'Next.js', 'Hexagonal Architecture', 'AES-256 Crypto', 'PostgreSQL RLS'],
     featured: false,
+    image: '/projects/clinicalyx.png',
+    imageWidth: 1024,
+    imageHeight: 499,
     repo: 'https://github.com/carlosindriago/clinicalyx',
     url: ''
   },

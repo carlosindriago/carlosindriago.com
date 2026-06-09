@@ -44,8 +44,8 @@ const getGridSpanClass = (index: number) => {
                       src={p.image}
                       alt={`Captura de pantalla de ${p.title}`}
                       loading="lazy"
-                      width="1024"
-                      height="787"
+                      width={p.imageWidth || 1024}
+                      height={p.imageHeight || 787}
                       class="w-full h-auto object-cover group-hover:scale-[1.02] transition-transform duration-500"
                     />
                   </div>
