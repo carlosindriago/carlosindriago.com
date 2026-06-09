@@ -111,6 +111,9 @@ export const projects: Project[] = [
     impact: 'Personalización precisa del entorno sin efectos colaterales sobre otros dispositivos.',
     tags: ['Python', 'Linux Kernel', 'Hardware Integration', 'GUI'],
     featured: false,
+    image: '/projects/tuxkeystoys.png',
+    imageWidth: 684,
+    imageHeight: 636,
     repo: 'https://github.com/carlosindriago/tuxkeystoys',
     url: ''
   }
