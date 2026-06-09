@@ -5,6 +5,7 @@ export interface Project {
   impact: string;
   tags: string[];
   url?: string;
+  urlLabel?: string;
   repo?: string;
   featured?: boolean;
   image?: string;
@@ -20,7 +21,8 @@ export const projects: Project[] = [
     featured: true,
     image: '/projects/aequivault.png',
     repo: 'https://github.com/carlosindriago/AequiVault',
-    url: ''
+    url: 'https://aequivault.carlosindriago.com/',
+    urlLabel: 'Ver en Producción'
   },
   {
     title: 'Clinicalyx (HealthTech SaaS)',
