@@ -7,6 +7,7 @@ export interface Project {
   url?: string;
   repo?: string;
   featured?: boolean;
+  image?: string;
 }
 
 export const projects: Project[] = [
@@ -17,6 +18,7 @@ export const projects: Project[] = [
     impact: 'Base auditable y preparada para cumplimiento, con separación estricta de datos y una arquitectura clara para evolucionar reglas financieras complejas.',
     tags: ['Java 21', 'Spring Boot', 'PostgreSQL LTREE', 'Row-Level Security', 'Clean Architecture'],
     featured: true,
+    image: '/projects/aequivault.png',
     repo: 'https://github.com/carlosindriago/AequiVault',
     url: ''
   },
