@@ -68,6 +68,9 @@ export const projects: Project[] = [
     impact: 'Mitigación de amenazas sin penalizar el rendimiento, con una arquitectura preparada para observar comportamiento y reducir falsos positivos.',
     tags: ['PHP', 'Web Application Firewall', 'UEBA', 'Security Architecture'],
     featured: false,
+    image: '/projects/spectrusguard.png',
+    imageWidth: 1024,
+    imageHeight: 499,
     repo: 'https://github.com/carlosindriago/SpectrusGuard',
     url: ''
   },
