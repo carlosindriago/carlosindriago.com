@@ -101,6 +101,9 @@ export const projects: Project[] = [
     impact: 'Menos configuración manual, experiencia más consistente y reducción de errores en entornos de trabajo complejos.',
     tags: ['TypeScript', 'Electron', 'Shell Scripting', 'X11 Architecture'],
     featured: false,
+    image: '/projects/wacom-linux.png',
+    imageWidth: 1000,
+    imageHeight: 700,
     repo: 'https://github.com/carlosindriago/wacom-linux',
     url: ''
   },
