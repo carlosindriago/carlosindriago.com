@@ -81,6 +81,9 @@ export const projects: Project[] = [
     impact: 'Consultas hasta 10x más rápidas sin modificar el core del CMS ni comprometer la operación de ventas.',
     tags: ['PHP', 'MySQL', 'Data Projection', 'Database Optimization'],
     featured: false,
+    image: '/projects/woospeed.webp',
+    imageWidth: 1024,
+    imageHeight: 499,
     repo: 'https://github.com/carlosindriago/woospeed',
     url: ''
   },
