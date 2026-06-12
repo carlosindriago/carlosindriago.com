@@ -53,7 +53,15 @@ import { projects } from '../data/projects';
 
                 <!-- Image Wrapper (Image Block) -->
                 <div class="w-full md:w-1/2 flex flex-col items-center justify-center">
-                  <div class="w-full overflow-hidden rounded-xl border border-white/10 bg-white/5 shadow-2xl relative group-hover:border-brand-500/20 transition-colors duration-300">
+                  <button
+                    type="button"
+                    aria-label={`Ver galería de ${p.title}`}
+                    data-gallery-src={p.image}
+                    data-gallery-alt={p.gallery && p.gallery.length > 0 ? p.gallery[0].alt : p.title}
+                    data-gallery-title={p.title}
+                    data-gallery-desc={p.gallery && p.gallery.length > 0 ? p.gallery[0].technicalDescription : 'Captura de pantalla principal.'}
+                    class="w-full text-left focus:outline-none focus:ring-2 focus:ring-brand-500 overflow-hidden rounded-xl border border-white/10 bg-white/5 shadow-2xl relative group-hover:border-brand-500/20 transition-all duration-300 block cursor-zoom-in"
+                  >
                     <img
                       src={p.image}
                       alt={`Captura de pantalla de ${p.title}`}
@@ -62,7 +70,7 @@ import { projects } from '../data/projects';
                       height={p.imageHeight || 787}
                       class="w-full h-auto object-contain rounded-xl shadow-inner-glow group-hover:scale-[1.02] transition-transform duration-500"
                     />
-                  </div>
+                  </button>
 
                   {p.gallery && p.gallery.length > 0 && (
                     <div class="thumbnails-grid flex gap-2 mt-4 flex-wrap w-full justify-start">
@@ -128,29 +136,29 @@ import { projects } from '../data/projects';
 
     <!-- Global Modal -->
     <div id="project-gallery-modal" class="fixed inset-0 bg-black/85 backdrop-blur-md z-50 flex items-center justify-center p-4 hidden" role="dialog" aria-modal="true">
-      <div class="relative bg-surface border border-white/10 rounded-2xl max-w-4xl w-full overflow-hidden flex flex-col md:flex-row shadow-2xl transition-all duration-300">
+      <div class="relative bg-surface/90 backdrop-blur-xl border border-white/10 rounded-2xl max-w-4xl w-full overflow-hidden flex flex-col md:flex-row shadow-2xl transition-all duration-300">
         <!-- Close Button -->
-        <button id="modal-close" class="absolute top-4 right-4 text-white/70 hover:text-white bg-black/40 hover:bg-black/60 rounded-full p-2 z-10 transition-colors focus:outline-none focus:ring-2 focus:ring-brand-500" aria-label="Cerrar modal">
+        <button id="modal-close" class="absolute top-4 right-4 text-white/70 hover:text-white bg-white/10 backdrop-blur-md hover:bg-white/20 border border-white/10 rounded-full p-2 z-10 transition-all focus:outline-none focus:ring-2 focus:ring-brand-500 shadow-lg" aria-label="Cerrar modal">
           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
         </button>
 
         <!-- Image Area -->
         <div class="relative w-full md:w-2/3 bg-black flex items-center justify-center p-4 min-h-[300px] md:min-h-[500px]">
           <!-- Prev Button -->
-          <button id="modal-prev" class="absolute left-4 top-1/2 -translate-y-1/2 text-white/70 hover:text-white bg-black/40 hover:bg-black/60 rounded-full p-3 z-10 transition-colors focus:outline-none focus:ring-2 focus:ring-brand-500 cursor-pointer hidden" aria-label="Imagen anterior">
+          <button id="modal-prev" class="absolute left-4 top-1/2 -translate-y-1/2 text-white/70 hover:text-white bg-white/10 backdrop-blur-md hover:bg-white/20 border border-white/10 rounded-full p-3 z-10 transition-all focus:outline-none focus:ring-2 focus:ring-brand-500 cursor-pointer hidden shadow-lg hover:scale-105" aria-label="Imagen anterior">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M15 19l-7-7 7-7"></path></svg>
           </button>
 
           <img id="modal-image" class="max-w-full max-h-[70vh] object-contain rounded-lg shadow-2xl" src="" alt="" />
 
           <!-- Next Button -->
-          <button id="modal-next" class="absolute right-4 top-1/2 -translate-y-1/2 text-white/70 hover:text-white bg-black/40 hover:bg-black/60 rounded-full p-3 z-10 transition-colors focus:outline-none focus:ring-2 focus:ring-brand-500 cursor-pointer hidden" aria-label="Siguiente imagen">
+          <button id="modal-next" class="absolute right-4 top-1/2 -translate-y-1/2 text-white/70 hover:text-white bg-white/10 backdrop-blur-md hover:bg-white/20 border border-white/10 rounded-full p-3 z-10 transition-all focus:outline-none focus:ring-2 focus:ring-brand-500 cursor-pointer hidden shadow-lg hover:scale-105" aria-label="Siguiente imagen">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"></path></svg>
           </button>
         </div>
 
         <!-- Content Area -->
-        <div class="w-full md:w-1/3 p-6 flex flex-col justify-between bg-[#0B0F19] border-t md:border-t-0 md:border-l border-white/10">
+        <div class="w-full md:w-1/3 p-6 flex flex-col justify-between bg-[#0B0F19]/80 backdrop-blur-md border-t md:border-t-0 md:border-l border-white/10">
           <div>
             <h4 id="modal-title" class="font-display font-800 text-white mb-2" style="font-size: var(--text-md);">Título del Proyecto</h4>
             <p id="modal-alt" class="text-xs font-semibold text-brand-400 font-mono uppercase tracking-wider mb-4">Vista Detallada</p>
@@ -228,10 +236,18 @@ import { projects } from '../data/projects';
       const desc = target.getAttribute('data-gallery-desc') || '';
 
       // Update active thumbnails reference group
-      const grid = target.closest('.thumbnails-grid');
+      let grid = target.closest('.thumbnails-grid');
+      if (!grid) {
+        // If the clicked element is the main image button (not inside .thumbnails-grid),
+        // we find the sibling .thumbnails-grid within the same image block wrapper.
+        const parent = target.closest('.w-full.md\\:w-1\\/2');
+        grid = parent ? parent.querySelector('.thumbnails-grid') : null;
+      }
+
       if (grid) {
         activeProjectThumbnails = Array.from(grid.querySelectorAll('[data-gallery-src]')) as HTMLElement[];
-        currentIndex = activeProjectThumbnails.indexOf(target);
+        const index = activeProjectThumbnails.indexOf(target);
+        currentIndex = index !== -1 ? index : 0;
       } else {
         activeProjectThumbnails = [target];
         currentIndex = 0;
