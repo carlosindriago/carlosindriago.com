@@ -58,8 +58,12 @@ export const projects: Project[] = [
     impact: 'Garantía de privacidad absoluta (Zero-Trust) al no transmitir documentos sensibles al servidor, con aislamiento estricto mediante políticas PostgreSQL RLS y liberado bajo licencia AGPL-3.0.',
     tags: ['TypeScript', 'Next.js 14', 'PostgreSQL RLS', 'Client-Side Architecture', 'SaaS'],
     featured: false,
+    image: '/projects/tramiflow.webp',
+    imageWidth: 1024,
+    imageHeight: 499,
     repo: 'https://github.com/carlosindriago/tramiflow-ce',
-    url: ''
+    url: 'https://tramiflow.vercel.app/login',
+    urlLabel: 'Ver en Producción'
   },
   {
     title: 'SpectrusGuard Enterprise',
