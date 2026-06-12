@@ -28,7 +28,7 @@ export const projects: Project[] = [
     impact: 'Base auditable y preparada para cumplimiento, con separación estricta de datos y una arquitectura clara para evolucionar reglas financieras complejas.',
     tags: ['Java 21', 'Spring Boot', 'PostgreSQL LTREE', 'Row-Level Security', 'Clean Architecture'],
     featured: true,
-    image: '/projects/aequivault.webp',
+    image: '/projects/aequivault-main.webp',
     imageWidth: 1024,
     imageHeight: 787,
     repo: 'https://github.com/carlosindriago/AequiVault',
@@ -36,19 +36,9 @@ export const projects: Project[] = [
     urlLabel: 'Ver en Producción',
     gallery: [
       {
-        src: '/projects/aequivault.webp',
-        alt: 'Core Ledger & Transactions',
-        technicalDescription: 'Consola principal del ledger contable de partida doble. Valida la consistencia de balances y la integridad de transacciones multi-tenant en tiempo real antes de su confirmación.'
-      },
-      {
-        src: '/projects/aequivault-db.webp',
-        alt: 'PostgreSQL Hierarchies & RLS',
-        technicalDescription: 'Estructura jerárquica de cuentas (Plan de Cuentas) utilizando PostgreSQL LTREE. Valida el aislamiento estricto por inquilino mediante políticas nativas de Row-Level Security.'
-      },
-      {
-        src: '/projects/aequivault-perf.webp',
-        alt: 'API Latency & Audit Trail',
-        technicalDescription: 'Consola de auditoría financiera inmutable y trazas de rendimiento. Valida latencias inferiores a 50ms en inserciones transaccionales concurrentes.'
+        src: '/projects/aequivault-main.webp',
+        alt: 'Dashboard Financiero y Proyección de Liquidez',
+        technicalDescription: 'Consola de mando financiero con aislamiento multi-tenant visible vía UUIDs. Las proyecciones de liquidez y flujos de caja evitan la presión sobre el Garbage Collector de la JVM delegando agregaciones complejas a PostgreSQL mediante window functions (SUM() OVER), garantizando métricas en tiempo constante O(1) independiente del volumen transaccional.'
       }
     ]
   },
