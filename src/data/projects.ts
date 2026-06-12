@@ -59,6 +59,11 @@ export const projects: Project[] = [
         src: '/projects/aequivault-reports.webp',
         alt: 'Módulo de Reportes - Balance de Comprobación',
         technicalDescription: 'Módulo de Reportes Financieros y Balance de Comprobación (Trial Balance). Evidencia la integridad matemática inmutable del motor de partida doble: la sumatoria global arroja un balance neto exacto de cero ("Estado: Cuadrado"). Las consolidaciones temporales por grupo contable se ejecutan mediante agregaciones avanzadas (rollups) a nivel de base de datos, garantizando auditorías SOX-compliant en tiempo real sin saturar la memoria de la capa de aplicación (JVM).'
+      },
+      {
+        src: '/projects/aequivault-config.webp',
+        alt: 'Configuración, Multi-tenancy e Internacionalización',
+        technicalDescription: 'Módulo de Configuración e Identidad del Inquilino (Tenant). Expone visualmente el UUID criptográfico utilizado para forzar el aislamiento físico de datos en PostgreSQL mediante Row-Level Security (RLS). Integra internacionalización dinámica (i18n) con carga diferida (lazy loading) de diccionarios JSON para optimizar el bundle inicial de Angular, y expone la interfaz para la gestión estricta de identidades y control de acceso basado en roles (RBAC).'
       }
     ]
   },
