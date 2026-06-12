@@ -64,6 +64,11 @@ export const projects: Project[] = [
         src: '/projects/aequivault-config.webp',
         alt: 'Configuración, Multi-tenancy e Internacionalización',
         technicalDescription: 'Módulo de Configuración e Identidad del Inquilino (Tenant). Expone visualmente el UUID criptográfico utilizado para forzar el aislamiento físico de datos en PostgreSQL mediante Row-Level Security (RLS). Integra internacionalización dinámica (i18n) con carga diferida (lazy loading) de diccionarios JSON para optimizar el bundle inicial de Angular, y expone la interfaz para la gestión estricta de identidades y control de acceso basado en roles (RBAC).'
+      },
+      {
+        src: '/projects/aequivault-rbac.webp',
+        alt: 'Matriz Dinámica de Roles y Permisos (RBAC)',
+        technicalDescription: 'Motor de Control de Acceso Basado en Roles (RBAC). Demuestra la implementación de una matriz de permisos dinámica, superando las limitaciones de los roles estáticos (hardcoded). Permite la composición de roles a medida para cumplir con el Principio de Mínimo Privilegio (PoLP), asignando capacidades granulares (ej. segregación de lectura/escritura) en módulos financieros críticos.'
       }
     ]
   },
