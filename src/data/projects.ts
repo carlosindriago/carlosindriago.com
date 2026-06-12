@@ -39,6 +39,16 @@ export const projects: Project[] = [
         src: '/projects/aequivault-main.webp',
         alt: 'Dashboard Financiero y Proyección de Liquidez',
         technicalDescription: 'Consola de mando financiero con aislamiento multi-tenant visible vía UUIDs. Las proyecciones de liquidez y flujos de caja evitan la presión sobre el Garbage Collector de la JVM delegando agregaciones complejas a PostgreSQL mediante window functions (SUM() OVER), garantizando métricas en tiempo constante O(1) independiente del volumen transaccional.'
+      },
+      {
+        src: '/projects/aequivault-coa.webp',
+        alt: 'Plan de Cuentas Jerárquico (LTREE)',
+        technicalDescription: 'Árbol Jerárquico del Plan de Cuentas (COA). Reemplaza las costosas consultas recursivas (WITH RECURSIVE) a nivel SQL mediante el uso del tipo de dato nativo LTREE de PostgreSQL e indexación GiST. Permite consolidar ramas financieras completas en la capa de aplicación con complejidad constante O(1), reduciendo drásticamente la latencia en la generación de reportes.'
+      },
+      {
+        src: '/projects/aequivault-journal.webp',
+        alt: 'Módulo de Asientos Contables y Reactividad',
+        technicalDescription: 'Módulo de Asientos Contables. Garantiza la inmutabilidad financiera (Clean Architecture & CQRS): los asientos confirmados bloquean alteraciones físicas (UPDATES/DELETES). El balanceo de la partida doble se evalúa asíncronamente en el cliente mediante Angular 18 Signals, eliminando el overhead de observables tradicionales.'
       }
     ]
   },
