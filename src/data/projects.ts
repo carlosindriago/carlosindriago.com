@@ -298,18 +298,8 @@ export const projects: Project[] = [
     gallery: [
       {
         src: '/projects/tuxkeystoys.webp',
-        alt: 'GUI Key Remapper',
-        technicalDescription: 'Interfaz de usuario para personalización de teclas físicas. Valida el mapa interactivo del teclado y la creación de capas de entrada personalizadas.'
-      },
-      {
-        src: '/projects/tuxkeystoys-db.webp',
-        alt: 'Keyd Integration Driver',
-        technicalDescription: 'Monitor del servicio keyd a bajo nivel. Valida la inyección segura de configuraciones aislando las reglas solo al teclado nativo de la laptop.'
-      },
-      {
-        src: '/projects/tuxkeystoys-perf.webp',
-        alt: 'Event Loop & Input Latency',
-        technicalDescription: 'Gráfico de tiempos de procesamiento de eventos input. Valida una latencia de inyección de entrada inferior a 1ms para una respuesta instantánea.'
+        alt: 'Interfaz CustomTkinter para Keyd (Manipulación de Kernel)',
+        technicalDescription: 'Utilidad gráfica que abstrae la manipulación de interrupciones de hardware a nivel de kernel (vía keyd). La arquitectura implementa detección dinámica de firmas de hardware para garantizar que el remapeo de evdev aplique exclusivamente al teclado físico del portátil, previniendo alteraciones en periféricos USB o Bluetooth externos. Interfaz construida con CustomTkinter bajo patrón MVC estricto.'
       }
     ]
   }
