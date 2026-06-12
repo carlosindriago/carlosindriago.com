@@ -35,13 +35,6 @@ import { projects } from '../data/projects';
                     ))}
                   </div>
 
-                  <!-- Tags -->
-                  <div class="flex flex-wrap gap-2 mb-8">
-                    {p.tags.map(tag => (
-                      <span class="px-3 py-1 rounded-full text-xs font-semibold bg-white/5 border border-white/10 text-gray-300 hover:border-brand-500/30 hover:bg-brand-500/5 hover:text-white transition-all duration-300 cursor-default">{tag}</span>
-                    ))}
-                  </div>
-
                   <!-- Links -->
                   {(p.url || p.repo) && (
                     <div class="flex gap-4 pt-6 border-t border-white/10">
@@ -94,6 +87,13 @@ import { projects } from '../data/projects';
                       ))}
                     </div>
                   )}
+
+                  <!-- Tags -->
+                  <div class="flex flex-wrap gap-2 mt-6 w-full justify-start">
+                    {p.tags.map(tag => (
+                      <span class="px-3 py-1 rounded-full text-xs font-semibold bg-white/5 border border-white/10 text-gray-300 hover:border-brand-500/30 hover:bg-brand-500/5 hover:text-white transition-all duration-300 cursor-default">{tag}</span>
+                    ))}
+                  </div>
                 </div>
               </>
             ) : (
