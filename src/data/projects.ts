@@ -300,6 +300,11 @@ export const projects: Project[] = [
         src: '/projects/tuxkeystoys.webp',
         alt: 'Interfaz CustomTkinter para Keyd (Manipulación de Kernel)',
         technicalDescription: 'Utilidad gráfica que abstrae la manipulación de interrupciones de hardware a nivel de kernel (vía keyd). La arquitectura implementa detección dinámica de firmas de hardware para garantizar que el remapeo de evdev aplique exclusivamente al teclado físico del portátil, previniendo alteraciones en periféricos USB o Bluetooth externos. Interfaz construida con CustomTkinter bajo patrón MVC estricto.'
+      },
+      {
+        src: '/projects/tuxkeystoys-keyboard.webp',
+        alt: 'Teclado Virtual Interactivo para Bootstrap de Configuración',
+        technicalDescription: 'Interfaz de Teclado Virtual Interactivo. Soluciona el problema crítico de "bootstrap" de configuración al permitir al usuario seleccionar visualmente las teclas físicas dañadas mediante interacciones de ratón, sin requerir la entrada física del hardware roto. Implementa gestión de estado compleja para la captura de eventos mixtos y un "Modo Combinación" (Chords) para remapeos complejos.'
       }
     ]
   }
