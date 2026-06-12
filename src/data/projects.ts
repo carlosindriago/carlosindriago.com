@@ -240,6 +240,11 @@ export const projects: Project[] = [
         src: '/projects/ulauncher.webp',
         alt: 'Ulauncher Interface interactuando con el Demonio de Docker',
         technicalDescription: 'Herramienta de productividad DevOps que conecta Ulauncher directamente con el socket del demonio de Docker. Demuestra capacidad de mantenimiento de software Open Source al rescatar un proyecto abandonado (legacy), refactorizando su núcleo para el SDK moderno de Python Docker 7.x+, implementando sanitización estricta de inputs y añadiendo soporte nativo para múltiples emuladores de terminal de Linux.'
+      },
+      {
+        src: '/projects/ulauncher-list.webp',
+        alt: 'Ulauncher listando contenedores de Docker activos en tiempo real',
+        technicalDescription: 'Interfaz de Ulauncher listando contenedores activos. Demuestra la interacción directa con la API del demonio de Docker a través de sockets UNIX para consultar y filtrar estados de ciclo de vida (`running`/`stopped`) en tiempo real. La arquitectura permite la extracción y visualización amigable de nombres de contenedores (ej. api-gateway, quant-engine) facilitando la gestión de infraestructuras de microservicios complejas directamente desde el launcher.'
       }
     ]
   },
