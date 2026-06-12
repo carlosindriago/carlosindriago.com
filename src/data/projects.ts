@@ -254,7 +254,7 @@ export const projects: Project[] = [
     ]
   },
   {
-    title: 'Wacom Linux Suite',
+    title: 'Open Graphic Tablet Configurator',
     problem: 'Configurar tabletas Wacom en Linux/X11 era frágil, manual y propenso a romperse en setups multi-monitor.',
     decision: 'Combiné reglas udev para detección persistente de hardware con un dashboard Electron para automatizar perfiles y ajustes.',
     impact: 'Menos configuración manual, experiencia más consistente y reducción de errores en entornos de trabajo complejos.',
