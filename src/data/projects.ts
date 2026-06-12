@@ -48,6 +48,9 @@ export const projects: Project[] = [
     impact: 'Aislamiento fuerte entre clientes, menor riesgo operativo y una estructura más mantenible para incorporar nuevos flujos de negocio.',
     tags: ['PHP 8.2', 'Laravel 11', 'PostgreSQL', 'Database-per-Tenant', 'Docker'],
     featured: false,
+    image: '/projects/kartenant.webp',
+    imageWidth: 1024,
+    imageHeight: 461,
     repo: 'https://github.com/carlosindriago/kartenant-erp',
     url: ''
   },
