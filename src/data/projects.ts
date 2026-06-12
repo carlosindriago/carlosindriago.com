@@ -245,6 +245,11 @@ export const projects: Project[] = [
         src: '/projects/ulauncher-list.webp',
         alt: 'Ulauncher listando contenedores de Docker activos en tiempo real',
         technicalDescription: 'Interfaz de Ulauncher listando contenedores activos. Demuestra la interacción directa con la API del demonio de Docker a través de sockets UNIX para consultar y filtrar estados de ciclo de vida (`running`/`stopped`) en tiempo real. La arquitectura permite la extracción y visualización amigable de nombres de contenedores (ej. api-gateway, quant-engine) facilitando la gestión de infraestructuras de microservicios complejas directamente desde el launcher.'
+      },
+      {
+        src: '/projects/ulauncher-options.webp',
+        alt: 'Panel de gestión de ciclo de vida y red del contenedor',
+        technicalDescription: 'Gestión de ciclo de vida y abstracción de metadatos. La extensión extrae y formatea en tiempo real configuraciones complejas (IPs internas, Port Bindings) desde la API de Docker. Destaca la integración profunda a nivel de sistema operativo (OS) para generar subprocesos que adjuntan sesiones TTY interactivas (ej. docker exec) y flujos de logs directamente en el emulador de terminal configurado por el usuario (ej. Alacritty), optimizando drásticamente la Experiencia del Desarrollador (DX).'
       }
     ]
   },
