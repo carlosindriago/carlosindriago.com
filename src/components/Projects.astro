@@ -135,8 +135,18 @@ import { projects } from '../data/projects';
         </button>
 
         <!-- Image Area -->
-        <div class="w-full md:w-2/3 bg-black flex items-center justify-center p-4 min-h-[300px] md:min-h-[500px]">
+        <div class="relative w-full md:w-2/3 bg-black flex items-center justify-center p-4 min-h-[300px] md:min-h-[500px]">
+          <!-- Prev Button -->
+          <button id="modal-prev" class="absolute left-4 top-1/2 -translate-y-1/2 text-white/70 hover:text-white bg-black/40 hover:bg-black/60 rounded-full p-3 z-10 transition-colors focus:outline-none focus:ring-2 focus:ring-brand-500 cursor-pointer hidden" aria-label="Imagen anterior">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M15 19l-7-7 7-7"></path></svg>
+          </button>
+
           <img id="modal-image" class="max-w-full max-h-[70vh] object-contain rounded-lg shadow-2xl" src="" alt="" />
+
+          <!-- Next Button -->
+          <button id="modal-next" class="absolute right-4 top-1/2 -translate-y-1/2 text-white/70 hover:text-white bg-black/40 hover:bg-black/60 rounded-full p-3 z-10 transition-colors focus:outline-none focus:ring-2 focus:ring-brand-500 cursor-pointer hidden" aria-label="Siguiente imagen">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"></path></svg>
+          </button>
         </div>
 
         <!-- Content Area -->
@@ -147,7 +157,8 @@ import { projects } from '../data/projects';
             <div class="border-t border-white/5 my-4"></div>
             <p id="modal-description" class="text-gray-300 text-sm leading-relaxed font-sans">Descripción técnica detallada.</p>
           </div>
-          <div class="text-[11px] text-gray-500 font-mono mt-6 flex justify-between items-center">
+          <div class="text-[11px] text-gray-500 font-mono mt-6 flex justify-between items-center w-full">
+            <span>Usa ← o → para navegar</span>
             <span>Presiona ESC para cerrar</span>
           </div>
         </div>
@@ -163,6 +174,11 @@ import { projects } from '../data/projects';
   const modalAlt = document.getElementById('modal-alt');
   const modalDesc = document.getElementById('modal-description');
   const modalClose = document.getElementById('modal-close');
+  const modalPrev = document.getElementById('modal-prev');
+  const modalNext = document.getElementById('modal-next');
+
+  let activeProjectThumbnails: HTMLElement[] = [];
+  let currentIndex = 0;
 
   const openModal = (src: string, alt: string, title: string, desc: string) => {
     if (!modal || !modalImg) return;
@@ -173,12 +189,33 @@ import { projects } from '../data/projects';
     if (modalDesc) modalDesc.textContent = desc;
     modal.classList.remove('hidden');
     document.body.style.overflow = 'hidden';
+
+    // Show/hide navigation controls based on gallery size
+    if (activeProjectThumbnails.length > 1) {
+      modalPrev?.classList.remove('hidden');
+      modalNext?.classList.remove('hidden');
+    } else {
+      modalPrev?.classList.add('hidden');
+      modalNext?.classList.add('hidden');
+    }
   };
 
   const closeModal = () => {
     if (!modal) return;
     modal.classList.add('hidden');
     document.body.style.overflow = '';
+  };
+
+  const showNext = () => {
+    if (activeProjectThumbnails.length <= 1) return;
+    currentIndex = (currentIndex + 1) % activeProjectThumbnails.length;
+    activeProjectThumbnails[currentIndex].click();
+  };
+
+  const showPrev = () => {
+    if (activeProjectThumbnails.length <= 1) return;
+    currentIndex = (currentIndex - 1 + activeProjectThumbnails.length) % activeProjectThumbnails.length;
+    activeProjectThumbnails[currentIndex].click();
   };
 
   // Add click listeners to all gallery buttons
@@ -189,8 +226,30 @@ import { projects } from '../data/projects';
       const alt = target.getAttribute('data-gallery-alt') || '';
       const title = target.getAttribute('data-gallery-title') || '';
       const desc = target.getAttribute('data-gallery-desc') || '';
+
+      // Update active thumbnails reference group
+      const grid = target.closest('.thumbnails-grid');
+      if (grid) {
+        activeProjectThumbnails = Array.from(grid.querySelectorAll('[data-gallery-src]')) as HTMLElement[];
+        currentIndex = activeProjectThumbnails.indexOf(target);
+      } else {
+        activeProjectThumbnails = [target];
+        currentIndex = 0;
+      }
+
       openModal(src, alt, title, desc);
     });
+  });
+
+  // Next/Prev click events
+  modalNext?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    showNext();
+  });
+  
+  modalPrev?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    showPrev();
   });
 
   // Close modal events
@@ -204,6 +263,10 @@ import { projects } from '../data/projects';
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
       closeModal();
+    } else if (e.key === 'ArrowRight' && !modal?.classList.contains('hidden')) {
+      showNext();
+    } else if (e.key === 'ArrowLeft' && !modal?.classList.contains('hidden')) {
+      showPrev();
     }
   });
 </script>
