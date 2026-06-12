@@ -54,6 +54,11 @@ export const projects: Project[] = [
         src: '/projects/aequivault-ledger.webp',
         alt: 'Libro Mayor y Saldo Acumulado (Running Balance)',
         technicalDescription: 'Vista del Libro Mayor (General Ledger). La columna de Saldo Acumulado no se calcula iterando registros en la memoria de la JVM. Se delega directamente al motor de PostgreSQL utilizando funciones de ventana (SUM() OVER), optimizando la proyección de lectura (arquitectura CQRS) y garantizando una latencia mínima en la paginación independientemente de la profundidad histórica del tenant.'
+      },
+      {
+        src: '/projects/aequivault-reports.webp',
+        alt: 'Módulo de Reportes - Balance de Comprobación',
+        technicalDescription: 'Módulo de Reportes Financieros y Balance de Comprobación (Trial Balance). Evidencia la integridad matemática inmutable del motor de partida doble: la sumatoria global arroja un balance neto exacto de cero ("Estado: Cuadrado"). Las consolidaciones temporales por grupo contable se ejecutan mediante agregaciones avanzadas (rollups) a nivel de base de datos, garantizando auditorías SOX-compliant en tiempo real sin saturar la memoria de la capa de aplicación (JVM).'
       }
     ]
   },
