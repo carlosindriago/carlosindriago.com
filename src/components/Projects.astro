@@ -31,12 +31,12 @@ const getGridSpanClass = (index: number) => {
       {projects.map((p, i) => {
         const isWide = getGridSpanClass(i) === 'md:col-span-2';
         return (
-          <article class={`group relative bg-surface/50 backdrop-blur-md rounded-2xl p-8 border border-white/10 hover:border-brand-500/30 transition-all duration-300 hover:shadow-[0_12px_40px_rgba(37,99,235,0.08)] hover:-translate-y-1 ${getGridSpanClass(i)}`}>
+          <article class={`group relative bg-surface/50 backdrop-blur-md rounded-2xl p-8 border border-white/10 hover:border-brand-500/30 transition-all duration-300 hover:shadow-[0_12px_40px_rgba(37,99,235,0.08)] hover:-translate-y-1 flex flex-col h-full ${getGridSpanClass(i)}`}>
             <!-- Index -->
             <span aria-hidden="true" class="font-display font-800 text-4xl text-white/10 absolute top-6 right-8 pointer-events-none">{String(i + 1).padStart(2, '0')}</span>
 
             {p.image ? (
-              <div class={isWide ? "flex flex-col md:grid md:grid-cols-[1.1fr_0.9fr] md:gap-8 md:items-center" : "flex flex-col"}>
+              <div class={isWide ? "flex flex-col md:grid md:grid-cols-[1.1fr_0.9fr] md:gap-8 md:items-center flex-grow" : "flex flex-col flex-grow"}>
                 <!-- Image Wrapper -->
                 <div class={isWide ? "order-first md:order-last mb-6 md:mb-0" : "order-first mb-6"}>
                   <div class="overflow-hidden rounded-xl border border-white/10 bg-white/5 shadow-2xl relative group-hover:border-brand-500/20 transition-colors duration-300">
@@ -46,13 +46,51 @@ const getGridSpanClass = (index: number) => {
                       loading="lazy"
                       width={p.imageWidth || 1024}
                       height={p.imageHeight || 787}
-                      class="w-full h-auto object-cover group-hover:scale-[1.02] transition-transform duration-500"
+                      class="w-full aspect-video object-cover object-top group-hover:scale-[1.02] transition-transform duration-500"
                     />
                   </div>
                 </div>
 
                 <!-- Content Wrapper -->
-                <div class={isWide ? "md:order-first" : ""}>
+                <div class={isWide ? "md:order-first flex flex-col flex-grow" : "flex flex-col flex-grow"}>
+                  <div class="flex-grow">
+                    <h3 class="font-display font-800 text-white mb-6 pr-12" style="font-size: var(--text-lg);">{p.title}</h3>
+
+                    <div class="grid gap-4 mb-8">
+                      {[
+                        { label: 'Problema', text: p.problem },
+                        { label: 'Decisión técnica', text: p.decision },
+                        { label: 'Impacto', text: p.impact },
+                      ].map(item => (
+                        <div class="rounded-2xl border border-white/5 bg-white/[0.03] p-4">
+                          <p class="font-mono text-[11px] font-bold uppercase tracking-widest text-brand-400 mb-2">{item.label}</p>
+                          <p class="text-gray-300 leading-relaxed text-[15px]">{item.text}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div class="mt-auto">
+                    <!-- Tags -->
+                    <div class="flex flex-wrap gap-2 mb-8">
+                      {p.tags.map(tag => (
+                        <span class="px-3 py-1 rounded-full text-xs font-semibold bg-white/5 border border-white/10 text-gray-300 hover:border-brand-500/30 hover:bg-brand-500/5 hover:text-white transition-all duration-300 cursor-default">{tag}</span>
+                      ))}
+                    </div>
+
+                    <!-- Links -->
+                    {(p.url || p.repo) && (
+                      <div class="flex gap-4 pt-6 border-t border-white/10">
+                        {p.url && <a href={p.url} aria-label={`${p.urlLabel || 'Ver demo'} de ${p.title}`} target="_blank" rel="noopener noreferrer" class="text-sm font-semibold text-brand-500 hover:text-white transition-colors flex items-center gap-1">{p.urlLabel || 'Ver demo'} <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>}
+                        {p.repo && <a href={p.repo} aria-label={`Ver código de ${p.title}`} target="_blank" rel="noopener noreferrer" class="text-sm font-semibold text-gray-300 hover:text-white transition-colors flex items-center gap-1">Código <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>}
+                      </div>
+                    )}
+                  </div>
+                </div>
+              </div>
+            ) : (
+              <>
+                <div class="flex-grow">
                   <h3 class="font-display font-800 text-white mb-6 pr-12" style="font-size: var(--text-lg);">{p.title}</h3>
 
                   <div class="grid gap-4 mb-8">
@@ -67,7 +105,9 @@ const getGridSpanClass = (index: number) => {
                       </div>
                     ))}
                   </div>
+                </div>
 
+                <div class="mt-auto">
                   <!-- Tags -->
                   <div class="flex flex-wrap gap-2 mb-8">
                     {p.tags.map(tag => (
@@ -83,38 +123,6 @@ const getGridSpanClass = (index: number) => {
                     </div>
                   )}
                 </div>
-              </div>
-            ) : (
-              <>
-                <h3 class="font-display font-800 text-white mb-6 pr-12" style="font-size: var(--text-lg);">{p.title}</h3>
-
-                <div class="grid gap-4 mb-8">
-                  {[
-                    { label: 'Problema', text: p.problem },
-                    { label: 'Decisión técnica', text: p.decision },
-                    { label: 'Impacto', text: p.impact },
-                  ].map(item => (
-                    <div class="rounded-2xl border border-white/5 bg-white/[0.03] p-4">
-                      <p class="font-mono text-[11px] font-bold uppercase tracking-widest text-brand-400 mb-2">{item.label}</p>
-                      <p class="text-gray-300 leading-relaxed text-[15px]">{item.text}</p>
-                    </div>
-                  ))}
-                </div>
-
-                <!-- Tags -->
-                <div class="flex flex-wrap gap-2 mb-8">
-                  {p.tags.map(tag => (
-                    <span class="px-3 py-1 rounded-full text-xs font-semibold bg-white/5 border border-white/10 text-gray-300 hover:border-brand-500/30 hover:bg-brand-500/5 hover:text-white transition-all duration-300 cursor-default">{tag}</span>
-                  ))}
-                </div>
-
-                <!-- Links -->
-                {(p.url || p.repo) && (
-                  <div class="flex gap-4 pt-6 border-t border-white/10">
-                    {p.url && <a href={p.url} aria-label={`${p.urlLabel || 'Ver demo'} de ${p.title}`} target="_blank" rel="noopener noreferrer" class="text-sm font-semibold text-brand-500 hover:text-white transition-colors flex items-center gap-1">{p.urlLabel || 'Ver demo'} <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>}
-                    {p.repo && <a href={p.repo} aria-label={`Ver código de ${p.title}`} target="_blank" rel="noopener noreferrer" class="text-sm font-semibold text-gray-300 hover:text-white transition-colors flex items-center gap-1">Código <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>}
-                  </div>
-                )}
               </>
             )}
           </article>
