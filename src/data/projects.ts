@@ -49,6 +49,11 @@ export const projects: Project[] = [
         src: '/projects/aequivault-journal.webp',
         alt: 'Módulo de Asientos Contables y Reactividad',
         technicalDescription: 'Módulo de Asientos Contables. Garantiza la inmutabilidad financiera (Clean Architecture & CQRS): los asientos confirmados bloquean alteraciones físicas (UPDATES/DELETES). El balanceo de la partida doble se evalúa asíncronamente en el cliente mediante Angular 18 Signals, eliminando el overhead de observables tradicionales.'
+      },
+      {
+        src: '/projects/aequivault-ledger.webp',
+        alt: 'Libro Mayor y Saldo Acumulado (Running Balance)',
+        technicalDescription: 'Vista del Libro Mayor (General Ledger). La columna de Saldo Acumulado no se calcula iterando registros en la memoria de la JVM. Se delega directamente al motor de PostgreSQL utilizando funciones de ventana (SUM() OVER), optimizando la proyección de lectura (arquitectura CQRS) y garantizando una latencia mínima en la paginación independientemente de la profundidad histórica del tenant.'
       }
     ]
   },
