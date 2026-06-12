@@ -230,26 +230,16 @@ export const projects: Project[] = [
     impact: 'Herramienta más estable, mantenible y compatible, con menor fricción para usuarios open-source.',
     tags: ['Python', 'Docker SDK', 'Legacy Refactoring'],
     featured: false,
-    image: '/projects/ulauncher-docker.webp',
+    image: '/projects/ulauncher.webp',
     imageWidth: 563,
     imageHeight: 307,
     repo: 'https://github.com/carlosindriago/ulauncher-docker',
     url: '',
     gallery: [
       {
-        src: '/projects/ulauncher-docker.webp',
-        alt: 'Docker Extension Interface',
-        technicalDescription: 'Interfaz integrada en el lanzador Ulauncher. Valida la rápida respuesta al listar contenedores y ejecutar acciones rápidas del Docker Daemon.'
-      },
-      {
-        src: '/projects/ulauncher-docker-db.webp',
-        alt: 'Terminal Emulator Integration',
-        technicalDescription: 'Vista de la integración con emuladores de terminal. Valida el correcto traspaso de comandos y la compatibilidad con diferentes shell entornos Linux.'
-      },
-      {
-        src: '/projects/ulauncher-docker-perf.webp',
-        alt: 'Docker SDK Performance',
-        technicalDescription: 'Monitor de uso de CPU y RAM de la extensión. Valida que el runtime mantenga un overhead mínimo de memoria al invocar el Docker API de fondo.'
+        src: '/projects/ulauncher.webp',
+        alt: 'Ulauncher Interface interactuando con el Demonio de Docker',
+        technicalDescription: 'Herramienta de productividad DevOps que conecta Ulauncher directamente con el socket del demonio de Docker. Demuestra capacidad de mantenimiento de software Open Source al rescatar un proyecto abandonado (legacy), refactorizando su núcleo para el SDK moderno de Python Docker 7.x+, implementando sanitización estricta de inputs y añadiendo soporte nativo para múltiples emuladores de terminal de Linux.'
       }
     ]
   },
