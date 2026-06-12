@@ -1,3 +1,9 @@
+export interface GalleryItem {
+  src: string;
+  alt: string;
+  technicalDescription: string;
+}
+
 export interface Project {
   title: string;
   problem: string;
@@ -11,6 +17,7 @@ export interface Project {
   image?: string;
   imageWidth?: number;
   imageHeight?: number;
+  gallery?: GalleryItem[];
 }
 
 export const projects: Project[] = [
@@ -26,7 +33,24 @@ export const projects: Project[] = [
     imageHeight: 787,
     repo: 'https://github.com/carlosindriago/AequiVault',
     url: 'https://aequivault.carlosindriago.com/',
-    urlLabel: 'Ver en Producción'
+    urlLabel: 'Ver en Producción',
+    gallery: [
+      {
+        src: '/projects/aequivault.webp',
+        alt: 'Core Ledger & Transactions',
+        technicalDescription: 'Consola principal del ledger contable de partida doble. Valida la consistencia de balances y la integridad de transacciones multi-tenant en tiempo real antes de su confirmación.'
+      },
+      {
+        src: '/projects/aequivault-db.webp',
+        alt: 'PostgreSQL Hierarchies & RLS',
+        technicalDescription: 'Estructura jerárquica de cuentas (Plan de Cuentas) utilizando PostgreSQL LTREE. Valida el aislamiento estricto por inquilino mediante políticas nativas de Row-Level Security.'
+      },
+      {
+        src: '/projects/aequivault-perf.webp',
+        alt: 'API Latency & Audit Trail',
+        technicalDescription: 'Consola de auditoría financiera inmutable y trazas de rendimiento. Valida latencias inferiores a 50ms en inserciones transaccionales concurrentes.'
+      }
+    ]
   },
   {
     title: 'Clinicalyx (HealthTech SaaS)',
@@ -39,7 +63,24 @@ export const projects: Project[] = [
     imageWidth: 1024,
     imageHeight: 499,
     repo: 'https://github.com/carlosindriago/clinicalyx',
-    url: ''
+    url: '',
+    gallery: [
+      {
+        src: '/projects/clinicalyx.webp',
+        alt: 'SaaS Patient Portal',
+        technicalDescription: 'Vista del expediente clínico multi-tenant. Valida la visualización segura de datos de salud en cumplimiento estricto con los requerimientos de la ley HIPAA.'
+      },
+      {
+        src: '/projects/clinicalyx-db.webp',
+        alt: 'Blind Indexing & AES-256',
+        technicalDescription: 'Panel de control de encriptación a nivel de campo. Valida la indexación determinista (Blind Indexing) para búsquedas rápidas en campos de datos cifrados.'
+      },
+      {
+        src: '/projects/clinicalyx-perf.webp',
+        alt: 'Infrastructure Performance',
+        technicalDescription: 'Métricas de infraestructura y monitoreo del servicio. Valida el aislamiento de conexiones y la integridad de datos transaccionales de PHI.'
+      }
+    ]
   },
   {
     title: 'Kartenant ERP',
@@ -52,7 +93,24 @@ export const projects: Project[] = [
     imageWidth: 1024,
     imageHeight: 461,
     repo: 'https://github.com/carlosindriago/kartenant-erp',
-    url: ''
+    url: '',
+    gallery: [
+      {
+        src: '/projects/kartenant.webp',
+        alt: 'Multi-tenant ERP Dashboard',
+        technicalDescription: 'Consola consolidada de administración del ERP. Valida la salud de los múltiples módulos integrados y la segregación de inquilinos en base de datos.'
+      },
+      {
+        src: '/projects/kartenant-db.webp',
+        alt: 'Tenant Database Connections',
+        technicalDescription: 'Consola de orquestación Landlord de Laravel. Valida las migraciones automáticas y la conexión dinámica a bases de datos aisladas por inquilino.'
+      },
+      {
+        src: '/projects/kartenant-perf.webp',
+        alt: 'API Metrics & Resource Load',
+        technicalDescription: 'Monitor de consumo de recursos de Docker. Valida latencias bajas y disponibilidad de balanceadores de carga en picos de tráfico operacional.'
+      }
+    ]
   },
   {
     title: 'TramiFlow CE (SaaS CRM & Workflow Engine)',
@@ -66,7 +124,24 @@ export const projects: Project[] = [
     imageHeight: 499,
     repo: 'https://github.com/carlosindriago/tramiflow-ce',
     url: 'https://tramiflow.vercel.app/login',
-    urlLabel: 'Ver en Producción'
+    urlLabel: 'Ver en Producción',
+    gallery: [
+      {
+        src: '/projects/tramiflow.webp',
+        alt: 'Workflow Designer & CRM',
+        technicalDescription: 'Dashboard principal de seguimiento de trámites y CRM. Valida el estado de expedientes y la automatización de notificaciones del flujo de trabajo.'
+      },
+      {
+        src: '/projects/tramiflow-db.webp',
+        alt: 'Client-Side WASM PDF Engine',
+        technicalDescription: 'Módulo client-side de firmas y manipulación de PDFs. Valida la privacidad absoluta (Zero-Trust) al procesar y firmar documentos sin subirlos al servidor.'
+      },
+      {
+        src: '/projects/tramiflow-perf.webp',
+        alt: 'Supabase RLS & Consumo',
+        technicalDescription: 'Trazas de Server Actions y cuotas de consumo. Valida el control estricto de accesos vía RLS de Supabase y límites por suscripción SaaS.'
+      }
+    ]
   },
   {
     title: 'SpectrusGuard Enterprise',
@@ -79,7 +154,24 @@ export const projects: Project[] = [
     imageWidth: 1024,
     imageHeight: 499,
     repo: 'https://github.com/carlosindriago/SpectrusGuard',
-    url: ''
+    url: '',
+    gallery: [
+      {
+        src: '/projects/spectrusguard.webp',
+        alt: 'WAF Traffic Overview',
+        technicalDescription: 'Visualización activa del analizador de tráfico. Valida la mitigación de ataques XSS e inyecciones SQL en tiempo real directamente en la capa PHP.'
+      },
+      {
+        src: '/projects/spectrusguard-db.webp',
+        alt: 'UEBA Analytics Console',
+        technicalDescription: 'Panel analítico de comportamiento de usuarios. Valida la detección de anomalías y reducción de falsos positivos usando reglas estadísticas no intrusivas.'
+      },
+      {
+        src: '/projects/spectrusguard-perf.webp',
+        alt: 'Latency Overhead Monitoring',
+        technicalDescription: 'Métrica de sobrecarga en tiempo de respuesta del WAF. Valida que la latencia agregada sea menor a 2ms, garantizando rendimiento del servidor.'
+      }
+    ]
   },
   {
     title: 'WooSpeed Analytics',
@@ -92,7 +184,24 @@ export const projects: Project[] = [
     imageWidth: 1024,
     imageHeight: 499,
     repo: 'https://github.com/carlosindriago/woospeed',
-    url: ''
+    url: '',
+    gallery: [
+      {
+        src: '/projects/woospeed.webp',
+        alt: 'Sales Analytics Overview',
+        technicalDescription: 'Panel general de visualización analítica WooCommerce. Valida el correcto rendimiento de ventas y el estado de carga de las consultas asíncronas.'
+      },
+      {
+        src: '/projects/woospeed-db.webp',
+        alt: 'Data Projection Engine',
+        technicalDescription: 'Consola de sincronización de proyecciones analíticas. Valida la consistencia de tablas planas optimizadas y la descompresión del flujo transaccional principal.'
+      },
+      {
+        src: '/projects/woospeed-perf.webp',
+        alt: 'Database Query Optimization',
+        technicalDescription: 'Estadísticas comparativas de latencia de consulta. Valida mejoras de hasta 10x de velocidad en consultas agregadas complejas.'
+      }
+    ]
   },
   {
     title: 'Ulauncher Docker Extension',
@@ -105,7 +214,24 @@ export const projects: Project[] = [
     imageWidth: 563,
     imageHeight: 307,
     repo: 'https://github.com/carlosindriago/ulauncher-docker',
-    url: ''
+    url: '',
+    gallery: [
+      {
+        src: '/projects/ulauncher-docker.webp',
+        alt: 'Docker Extension Interface',
+        technicalDescription: 'Interfaz integrada en el lanzador Ulauncher. Valida la rápida respuesta al listar contenedores y ejecutar acciones rápidas del Docker Daemon.'
+      },
+      {
+        src: '/projects/ulauncher-docker-db.webp',
+        alt: 'Terminal Emulator Integration',
+        technicalDescription: 'Vista de la integración con emuladores de terminal. Valida el correcto traspaso de comandos y la compatibilidad con diferentes shell entornos Linux.'
+      },
+      {
+        src: '/projects/ulauncher-docker-perf.webp',
+        alt: 'Docker SDK Performance',
+        technicalDescription: 'Monitor de uso de CPU y RAM de la extensión. Valida que el runtime mantenga un overhead mínimo de memoria al invocar el Docker API de fondo.'
+      }
+    ]
   },
   {
     title: 'Wacom Linux Suite',
@@ -118,7 +244,24 @@ export const projects: Project[] = [
     imageWidth: 1000,
     imageHeight: 700,
     repo: 'https://github.com/carlosindriago/wacom-linux',
-    url: ''
+    url: '',
+    gallery: [
+      {
+        src: '/projects/wacom-linux.webp',
+        alt: 'Configuration Dashboard',
+        technicalDescription: 'Panel interactivo para mapeo de tabletas digitalizadoras. Valida la asignación de perfiles específicos y calibración de lápices en setups de trabajo.'
+      },
+      {
+        src: '/projects/wacom-linux-db.webp',
+        alt: 'udev Rule Orchestration',
+        technicalDescription: 'Consola de depuración de reglas de dispositivos hotplug. Valida el correcto reconocimiento persistente de hardware al conectar/desconectar vía USB.'
+      },
+      {
+        src: '/projects/wacom-linux-perf.webp',
+        alt: 'Multi-Monitor Mapping Latency',
+        technicalDescription: 'Monitoreo de latencia de entrada y coordenadas X11. Valida que no exista input lag en pantallas 4K y setups de escritorio extendido.'
+      }
+    ]
   },
   {
     title: 'TuxKeysToys',
@@ -131,6 +274,23 @@ export const projects: Project[] = [
     imageWidth: 684,
     imageHeight: 636,
     repo: 'https://github.com/carlosindriago/tuxkeystoys',
-    url: ''
+    url: '',
+    gallery: [
+      {
+        src: '/projects/tuxkeystoys.webp',
+        alt: 'GUI Key Remapper',
+        technicalDescription: 'Interfaz de usuario para personalización de teclas físicas. Valida el mapa interactivo del teclado y la creación de capas de entrada personalizadas.'
+      },
+      {
+        src: '/projects/tuxkeystoys-db.webp',
+        alt: 'Keyd Integration Driver',
+        technicalDescription: 'Monitor del servicio keyd a bajo nivel. Valida la inyección segura de configuraciones aislando las reglas solo al teclado nativo de la laptop.'
+      },
+      {
+        src: '/projects/tuxkeystoys-perf.webp',
+        alt: 'Event Loop & Input Latency',
+        technicalDescription: 'Gráfico de tiempos de procesamiento de eventos input. Valida una latencia de inyección de entrada inferior a 1ms para una respuesta instantánea.'
+      }
+    ]
   }
 ];
