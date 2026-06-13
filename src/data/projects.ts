@@ -263,7 +263,7 @@ export const projects: Project[] = [
     image: '/projects/wacom-linux.webp',
     imageWidth: 1000,
     imageHeight: 700,
-    repo: 'https://github.com/carlosindriago/wacom-linux',
+    repo: 'https://github.com/carlosindriago/open-tablet-configurator',
     url: '',
     gallery: [
       {
