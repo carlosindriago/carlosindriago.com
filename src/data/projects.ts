@@ -275,6 +275,11 @@ export const projects: Project[] = [
         src: '/projects/open-tablet-mapping.webp',
         alt: 'Mapeo de matrices multi-monitor y visualización de curvas de presión',
         technicalDescription: 'Motor de Mapeo Geométrico y Curvas de Presión. Resuelve la distorsión de relación de aspecto (aspect ratio) en X11 automatizando el cálculo de la Matriz de Transformación de Coordenadas mediante el cruce de topología xrandr y geometría del hardware. Adicionalmente, abstrae la configuración matemática de curvas de Bezier de xsetwacom hacia perfiles de sensibilidad visuales y predefinidos, mejorando drásticamente la UX para artistas digitales.'
+      },
+      {
+        src: '/projects/open-tablet-buttons.webp',
+        alt: 'Orquestación de eventos de hardware y botones del stylus',
+        technicalDescription: 'Motor de Mapeo de Eventos (Input Events). Abstrae la compleja sintaxis de asignación del servidor X11, interceptando las señales físicas del hardware (botones del stylus) y traduciéndolas dinámicamente a eventos de puntero del sistema operativo. Garantiza una propagación limpia de las interrupciones hacia software de grado profesional (Krita, GIMP) evitando conflictos en la capa de aplicación.'
       }
     ]
   },
