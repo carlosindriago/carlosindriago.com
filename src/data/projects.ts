@@ -269,7 +269,7 @@ export const projects: Project[] = [
       {
         src: '/projects/open-tablet-main.webp',
         alt: 'Dashboard Electron para configuración de hardware X11',
-        technicalDescription: 'Interfaz gráfica (GUI) construida en Electron. Abstrae la complejidad de la manipulación del servidor X11 (xsetwacom/xrandr) permitiendo a los usuarios gestionar la orientación del dispositivo y el mapeo de coordenadas (Absoluto/Relativo) en tiempo real. Demuestra la capacidad de crear puentes IPC (Inter-Process Communication) seguros entre el frontend moderno y scripts bash de bajo nivel del sistema operativo.'
+        technicalDescription: 'Dashboard Arquitectónico (Electron/Node.js) para la orquestación de periféricos en servidores gráficos X11. Implementa persistencia a nivel de hardware mediante reglas udev personalizadas (Vendor ID 056a) y sondeo dinámico del entorno gráfico (vía xrandr y xsetwacom). La arquitectura establece un puente IPC (Inter-Process Communication) estricto que traduce interacciones de UI modernas en ejecuciones seguras de scripts bash de bajo nivel, calculando en tiempo real matrices de transformación geométrica para entornos multi-monitor y renderizando curvas de presión vectoriales (SVG).'
       },
       {
         src: '/projects/wacom-linux-db.webp',
