@@ -260,16 +260,16 @@ export const projects: Project[] = [
     impact: 'Menos configuración manual, experiencia más consistente y reducción de errores en entornos de trabajo complejos.',
     tags: ['TypeScript', 'Electron', 'Shell Scripting', 'X11 Architecture'],
     featured: false,
-    image: '/projects/wacom-linux.webp',
+    image: '/projects/open-tablet-main.webp',
     imageWidth: 1000,
     imageHeight: 700,
     repo: 'https://github.com/carlosindriago/open-tablet-configurator',
     url: '',
     gallery: [
       {
-        src: '/projects/wacom-linux.webp',
-        alt: 'Configuration Dashboard',
-        technicalDescription: 'Panel interactivo para mapeo de tabletas digitalizadoras. Valida la asignación de perfiles específicos y calibración de lápices en setups de trabajo.'
+        src: '/projects/open-tablet-main.webp',
+        alt: 'Dashboard Electron para configuración de hardware X11',
+        technicalDescription: 'Interfaz gráfica (GUI) construida en Electron. Abstrae la complejidad de la manipulación del servidor X11 (xsetwacom/xrandr) permitiendo a los usuarios gestionar la orientación del dispositivo y el mapeo de coordenadas (Absoluto/Relativo) en tiempo real. Demuestra la capacidad de crear puentes IPC (Inter-Process Communication) seguros entre el frontend moderno y scripts bash de bajo nivel del sistema operativo.'
       },
       {
         src: '/projects/wacom-linux-db.webp',
