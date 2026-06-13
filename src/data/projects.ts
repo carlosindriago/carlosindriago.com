@@ -270,6 +270,11 @@ export const projects: Project[] = [
         src: '/projects/open-tablet-main.webp',
         alt: 'Dashboard Electron para configuración de hardware X11',
         technicalDescription: 'Dashboard Arquitectónico (Electron/Node.js) para la orquestación de periféricos en servidores gráficos X11. Implementa persistencia a nivel de hardware mediante reglas udev personalizadas (Vendor ID 056a) y sondeo dinámico del entorno gráfico (vía xrandr y xsetwacom). La arquitectura establece un puente IPC (Inter-Process Communication) estricto que traduce interacciones de UI modernas en ejecuciones seguras de scripts bash de bajo nivel, calculando en tiempo real matrices de transformación geométrica para entornos multi-monitor y renderizando curvas de presión vectoriales (SVG).'
+      },
+      {
+        src: '/projects/open-tablet-mapping.webp',
+        alt: 'Mapeo de matrices multi-monitor y visualización de curvas de presión',
+        technicalDescription: 'Motor de Mapeo Geométrico y Curvas de Presión. Resuelve la distorsión de relación de aspecto (aspect ratio) en X11 automatizando el cálculo de la Matriz de Transformación de Coordenadas mediante el cruce de topología xrandr y geometría del hardware. Adicionalmente, abstrae la configuración matemática de curvas de Bezier de xsetwacom hacia perfiles de sensibilidad visuales y predefinidos, mejorando drásticamente la UX para artistas digitales.'
       }
     ]
   },
