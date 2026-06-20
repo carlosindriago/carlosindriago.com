@@ -83,7 +83,7 @@ export const projects: Project[] = [
     imageWidth: 1024,
     imageHeight: 499,
     repo: 'https://github.com/carlosindriago/clinicalyx',
-    url: 'https://clinicalyx.carlosindriago.com/',
+    url: 'https://clinicalyx.carlosindriago.com/demo/loading',
     urlLabel: 'Ver en Producción',
     gallery: [
       {
