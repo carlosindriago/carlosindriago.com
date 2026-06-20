@@ -32,7 +32,7 @@ export const projects: Project[] = [
     imageWidth: 1024,
     imageHeight: 787,
     repo: 'https://github.com/carlosindriago/AequiVault',
-    url: 'https://aequivault.carlosindriago.com/',
+    url: 'https://aequivault.carlosindriago.com/demo/loading',
     urlLabel: 'Ver en Producción',
     gallery: [
       {
